@@ -104,8 +104,6 @@
     "imgUserAddEdit_1": 204,
     "imgUserAddEdit_2": 109,
     "imgUserAddEdit_3": 147,
-    "Label2": 79,
-    "Label3": 80,
     "Label4": 81,
     "lblApplicationCategoryIDGrid": 101,
     "lblApplicationCategoryIDGrid_1": 197,
@@ -231,7 +229,7 @@
     "USER_REQUEST_DataCard1": 163
   },
   "FunctionParamsInvariantScripts": {},
-  "HeaderLastSavedDateTimeUTC": "04/11/2022 18:01:24",
+  "HeaderLastSavedDateTimeUTC": "04/11/2022 18:01:50",
   "IsLegacyComponentAllowGlobalScopeCase": false,
   "LocalDatabaseReferencesAsEmpty": false,
   "LocalResourceFileNames": {
@@ -376,8 +374,6 @@
     "imgUserAddEdit_1": 179,
     "imgUserAddEdit_2": 84,
     "imgUserAddEdit_3": 122,
-    "Label2": 54,
-    "Label3": 55,
     "Label4": 56,
     "lblApplicationCategoryIDGrid": 76,
     "lblApplicationCategoryIDGrid_1": 172,
