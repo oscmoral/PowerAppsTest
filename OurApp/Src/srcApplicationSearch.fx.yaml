@@ -260,3 +260,9 @@ srcApplicationSearch As screen:
         Y: =289
         ZIndex: =18
 
+    Label1 As label:
+        Text: ="Test Commit"
+        X: =856
+        Y: =215
+        ZIndex: =19
+
