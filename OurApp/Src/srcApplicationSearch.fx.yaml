@@ -266,3 +266,21 @@ srcApplicationSearch As screen:
         Y: =215
         ZIndex: =19
 
+    Label2 As label:
+        Text: ="Text"
+        X: =40
+        Y: =40
+        ZIndex: =20
+
+    Label3 As label:
+        Text: ="Text"
+        X: =60
+        Y: =60
+        ZIndex: =21
+
+    Label4 As label:
+        Text: ="Cambio mio"
+        X: =1216
+        Y: =137
+        ZIndex: =22
+
