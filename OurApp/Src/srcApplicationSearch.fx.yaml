@@ -78,7 +78,7 @@ srcApplicationSearch As screen:
         FontWeight: =FontWeight.Bold
         Height: =81
         Size: =28
-        Text: ="Applications Catalog Title"
+        Text: ="Applications"
         Width: =1049
         X: =317
         Y: =100
