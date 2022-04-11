@@ -34,7 +34,7 @@ LeftMenu As CanvasComponent:
         Height: =800
         Items: =LeftMenu.MenuItems
         Layout: =Layout.Vertical
-        TemplateSize: =280
+        TemplateSize: =380
         ZIndex: =1
 
         recOption As rectangle:
@@ -60,6 +60,7 @@ LeftMenu As CanvasComponent:
 
         lblOption As label:
             Color: =LeftMenu.MenuColor
+            Font: =Font.'Great Vibes'
             Height: =50
             OnSelect: =Select(Parent)
             Size: =21
@@ -70,6 +71,8 @@ LeftMenu As CanvasComponent:
 
         btnOption As button:
             Fill: =Transparent
+            Font: =Font.'Great Vibes'
+            FontWeight: =FontWeight.Bold
             Height: =50
             HoverFill: =Transparent
             OnSelect: =Navigate(ThisItem.MenuScreenNavigate, ScreenTransition.Fade)

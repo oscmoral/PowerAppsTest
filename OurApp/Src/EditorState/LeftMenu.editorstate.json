@@ -54,8 +54,22 @@
         "IsLockable": false,
         "NameMapSourceSchema": "?"
       },
-      "Font",
-      "FontWeight",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "Font",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "FontWeight",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Align",
       "VerticalAlign",
       {
@@ -331,7 +345,14 @@
         "NameMapSourceSchema": "?"
       },
       "WrapCount",
-      "TemplateSize",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "TemplateSize",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "Layout",
       "Transition",
       "LoadingSpinner",
@@ -759,7 +780,14 @@
       "DisabledFill",
       "PressedFill",
       "HoverFill",
-      "Font",
+      {
+        "AFDDataSourceName": "",
+        "AutoRuleBindingEnabled": false,
+        "AutoRuleBindingString": "",
+        "InvariantPropertyName": "Font",
+        "IsLockable": false,
+        "NameMapSourceSchema": "?"
+      },
       "FontWeight",
       "Align",
       "VerticalAlign",
@@ -1084,27 +1112,27 @@
       {
         "Category": "Design",
         "PropertyName": "ZIndex",
-        "RuleProviderType": "Unknown"
+        "RuleProviderType": "System"
       },
       {
         "Category": "Design",
         "PropertyName": "Y",
-        "RuleProviderType": "Unknown"
+        "RuleProviderType": "System"
       },
       {
         "Category": "Design",
         "PropertyName": "X",
-        "RuleProviderType": "Unknown"
+        "RuleProviderType": "System"
       },
       {
         "Category": "Design",
         "PropertyName": "Width",
-        "RuleProviderType": "Unknown"
+        "RuleProviderType": "System"
       },
       {
         "Category": "Design",
         "PropertyName": "Height",
-        "RuleProviderType": "Unknown"
+        "RuleProviderType": "System"
       },
       {
         "Category": "Design",
