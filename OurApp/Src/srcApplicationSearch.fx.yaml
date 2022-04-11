@@ -1,0 +1,262 @@
+srcApplicationSearch As screen:
+
+    recHeaderPrincipal As rectangle:
+        Fill: =RGBA(153, 207, 236, 1)
+        Width: =1366
+        ZIndex: =1
+
+    lblTitlePrincipal As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =Bold
+        Height: =100
+        Size: =32
+        Text: ="Central Application Management"
+        Width: =740
+        X: =92
+        ZIndex: =2
+
+    lftMenuPrincipal As LeftMenu:
+        Height: =668
+        MenuBgColor: =RGBA(179, 179, 179, 1)
+        MenuColor: =RGBA(255, 255, 255, 1)
+        MenuItems: |-
+            =Table(
+                    {
+                        MenuLabel: "Applications",
+                        MenuIcon: Icon.Controller,
+                        MenuScreenNavigate: srcApplicationSearch,
+                        MenuID: 1
+                    },
+                    {
+                        MenuLabel: "Categorys",
+                        MenuIcon: Icon.Tag,
+                        MenuScreenNavigate: srcCategorySearch,
+                        MenuID: 2
+                    },
+                    {
+                        MenuLabel: "Users",
+                        MenuIcon: Icon.Person,
+                        MenuScreenNavigate: srcUsersSearch,
+                        MenuID: 3
+                    },
+                    {
+                        MenuLabel: "User Privs",
+                        MenuIcon: Icon.Lock,
+                        MenuScreenNavigate: srcCategorySearch,
+                        MenuID: 4
+                    },
+                    {
+                        MenuLabel: "Priv Request",
+                        MenuIcon: Icon.Mail,
+                        MenuScreenNavigate: srcRequestSearch,
+                        MenuID: 5
+                    }
+                )
+        Width: =317
+        Y: =100
+        ZIndex: =3
+
+    icoBackPrincipal As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =13
+        Y: =13
+        ZIndex: =4
+
+    recSeparatorTitlePrincipal As rectangle:
+        Fill: =RGBA(128, 128, 128, 1)
+        Height: =1
+        Width: =1049
+        X: =317
+        Y: =181
+        ZIndex: =5
+
+    lblCatalogTitlePrincipal As label:
+        Align: =Center
+        Color: =RGBA(128, 128, 128, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =81
+        Size: =28
+        Text: ="Applications Catalog"
+        Width: =1049
+        X: =317
+        Y: =100
+        ZIndex: =6
+
+    imgUser As image:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        Height: =77
+        Image: ='kisspng-computer-icons-user-profile-info-5acde51ebdcc36.0919547315234429747774'
+        RadiusBottomLeft: =imgUser.Height
+        RadiusBottomRight: =imgUser.Height
+        RadiusTopLeft: =imgUser.Height
+        RadiusTopRight: =imgUser.Height
+        Width: =80
+        X: =1246
+        Y: =13
+        ZIndex: =7
+
+    lblUserPrincipal As label:
+        Align: =Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Size: =20
+        Text: |-
+            ="User: Oscar Morales Martinez"
+        Width: =395
+        X: =832
+        Y: =13
+        ZIndex: =8
+
+    lblRolPrincipal As label:
+        Align: =Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Size: =20
+        Text: |-
+            ="Role: Admin"
+        Width: =395
+        X: =832
+        Y: =54
+        ZIndex: =9
+
+    galApplicationData As gallery.galleryVertical:
+        BorderColor: =RGBA(56, 96, 178, 1)
+        Height: =425
+        Items: |-
+            =//APPLICATIONS
+            Search(APPLICATIONS, txtApplicationNameSearch.Text, "APPLICATION_NAME")
+        Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected,RGBA(224,224,224,100), RGBA(224,224,224,0))
+        TemplateSize: =70
+        Width: =1049
+        X: =317
+        Y: =342
+        ZIndex: =10
+
+        lblApplicationCodeGrid As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.APPLICATION_CODE
+            Width: =187
+            X: =2
+            ZIndex: =1
+
+        lblApplicationNameGrid As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.APPLICATION_NAME
+            Width: |
+                =272
+            X: =190
+            ZIndex: =2
+
+        btnEdit As button:
+            Fill: =RGBA(153, 207, 236, 1)
+            HoverFill: =ColorFade(RGBA(153, 207, 236, 1), -20%)
+            OnSelect: |-
+                =//Select(Parent)
+                Set(_application, galApplicationData.Selected);
+                EditForm(frmApplication);
+                Navigate(srcApplicationAddEdit, ScreenTransition.Fade)
+            Text: ="Edit"
+            Width: =110
+            X: =736
+            Y: =12
+            ZIndex: =3
+
+        btnDelete As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 0, 0, 1), -20%)
+            OnSelect: |-
+                =Set(_application, galApplicationData.Selected);
+                Remove(APPLICATIONS, _application);
+            Text: ="Delete"
+            Width: =110
+            X: =867
+            Y: =12
+            ZIndex: =4
+
+        lblApplicationCategoryIDGrid As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.ID_CATEGORY
+            Width: =187
+            X: =475
+            ZIndex: =5
+
+    recApplicationDataHeader As rectangle:
+        Fill: =RGBA(153, 207, 236, 1)
+        Height: =53
+        Width: =galApplicationData.Width
+        X: =317
+        Y: =289
+        ZIndex: =11
+
+    lblApplicationNameGridHeader As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =15
+        Text: ="Application Code"
+        Width: =lblApplicationCodeGrid.Width
+        X: =317
+        Y: =289
+        ZIndex: =12
+
+    lblApplicationCodeGridHeader As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =15
+        Text: ="Application Name"
+        Width: =272
+        X: =504
+        Y: =289
+        ZIndex: =13
+
+    txtApplicationNameSearch As text:
+        Default: =""
+        Height: =59
+        Width: =322
+        X: =510
+        Y: =193
+        ZIndex: =14
+
+    lblApplicationNameSearch As label:
+        Align: =Right
+        Height: =59
+        Size: =15
+        Text: ="Application Name"
+        Width: =187
+        X: =317
+        Y: =193
+        ZIndex: =15
+
+    btnAddApplication As button:
+        Fill: =RGBA(153, 207, 236, 1)
+        Height: =txtApplicationNameSearch.Height
+        HoverFill: =ColorFade(RGBA(153, 207, 236, 1), -20%)
+        OnSelect: |-
+            =NewForm(frmApplication);
+            Navigate(srcApplicationAddEdit, ScreenTransition.Fade)
+        Text: ="Add Application"
+        Width: =176
+        X: =1177
+        Y: =206
+        ZIndex: =17
+
+    lblApplicationCategoryIDHeader As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =15
+        Text: ="Category ID"
+        Width: =lblApplicationCodeGrid.Width
+        X: =781
+        Y: =289
+        ZIndex: =18
+

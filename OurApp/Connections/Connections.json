@@ -1,0 +1,47 @@
+{
+  "9669422a-36d9-429b-a14f-f7e35de02b7e": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/3560d6ce768d4bd6b805aba4c0bbf792",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1539/1.0.1539.2620/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://example030.sharepoint.com/sites/OscarMmtz": {
+        "dataSources": {
+          "APPLICATIONS": {
+            "tableName": "b22cfdc3-a3bd-4c6c-a04f-b628b170d2b7"
+          },
+          "CATEGORIES": {
+            "tableName": "f5988fc0-871e-4ded-bfe8-72e0811fdb54"
+          },
+          "PRIV_REQUEST": {
+            "tableName": "66848fd5-62a2-4394-b077-f68835331846"
+          },
+          "USER_PRIVS": {
+            "tableName": "765e6bb2-7fe4-4e10-8a04-c14267fcb756"
+          },
+          "USERS": {
+            "tableName": "94f40247-642e-4075-9f43-5e475d647231"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "APPLICATIONS",
+      "CATEGORIES",
+      "USER_PRIVS",
+      "USERS",
+      "PRIV_REQUEST"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "9669422a-36d9-429b-a14f-f7e35de02b7e"
+  }
+}

@@ -1,0 +1,227 @@
+srcCategoryAddEdit As screen:
+
+    recHeaderApplicationAddEdit_2 As rectangle:
+        Fill: =RGBA(153, 207, 236, 1)
+        Width: =1366
+        ZIndex: =1
+
+    lblTitleApplicationAddEdit_2 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =Bold
+        Height: =100
+        Size: =32
+        Text: ="Central Application Management"
+        Width: =740
+        X: =92
+        ZIndex: =2
+
+    lftMenuApplicationAddEdit_2 As LeftMenu:
+        Height: =668
+        MenuBgColor: =RGBA(179, 179, 179, 1)
+        MenuColor: =RGBA(255, 255, 255, 1)
+        MenuItems: |-
+            =Table(
+                    {
+                        MenuLabel: "Applications",
+                        MenuIcon: Icon.Controller,
+                        MenuScreenNavigate: srcApplicationSearch,
+                        MenuID: 1
+                    },
+                    {
+                        MenuLabel: "Categorys",
+                        MenuIcon: Icon.Tag,
+                        MenuScreenNavigate: srcCategorySearch,
+                        MenuID: 2
+                    },
+                    {
+                        MenuLabel: "Users",
+                        MenuIcon: Icon.Person,
+                        MenuScreenNavigate: srcUsersSearch,
+                        MenuID: 3
+                    },
+                    {
+                        MenuLabel: "User Privs",
+                        MenuIcon: Icon.Lock,
+                        MenuScreenNavigate: srcCategorySearch,
+                        MenuID: 4
+                    },
+                    {
+                        MenuLabel: "Priv Request",
+                        MenuIcon: Icon.Mail,
+                        MenuScreenNavigate: srcRequestSearch,
+                        MenuID: 5
+                    }
+                )
+        Width: =317
+        Y: =100
+        ZIndex: =3
+
+    icoBackApplicationAddEdit_2 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =13
+        Y: =13
+        ZIndex: =4
+
+    recSeparatorTitleApplicationAddEdit_2 As rectangle:
+        Fill: =RGBA(128, 128, 128, 1)
+        Height: =1
+        Width: =1049
+        X: =317
+        Y: =181
+        ZIndex: =5
+
+    lblCatalogTitleApplicationAddEdit_2 As label:
+        Align: =Center
+        Color: =RGBA(128, 128, 128, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =81
+        Size: =28
+        Text: =If(frmCategory.Mode = FormMode.Edit, "Edit Category", "Create Category")
+        Width: =1049
+        X: =317
+        Y: =100
+        ZIndex: =6
+
+    imgUserAddEdit_2 As image:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        Height: =77
+        Image: ='kisspng-computer-icons-user-profile-info-5acde51ebdcc36.0919547315234429747774'
+        RadiusBottomLeft: =imgUserAddEdit_2.Height
+        RadiusBottomRight: =imgUserAddEdit_2.Height
+        RadiusTopLeft: =imgUserAddEdit_2.Height
+        RadiusTopRight: =imgUserAddEdit_2.Height
+        Width: =80
+        X: =1246
+        Y: =13
+        ZIndex: =7
+
+    lblUserApplicationAddEdit_2 As label:
+        Align: =Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Size: =20
+        Text: |-
+            ="User: Oscar Morales Martinez"
+        Width: =395
+        X: =832
+        Y: =13
+        ZIndex: =8
+
+    lblRolApplicationAddEdit_2 As label:
+        Align: =Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Size: =20
+        Text: |-
+            ="Role: Admin"
+        Width: =395
+        X: =832
+        Y: =54
+        ZIndex: =9
+
+    frmCategory As form:
+        DataSource: =CATEGORIES
+        Height: =467
+        Item: =_category
+        OnSuccess: =Navigate(srcCategorySearch, ScreenTransition.Fade)
+        Width: =1032
+        X: =325
+        Y: =192
+        ZIndex: =10
+
+        APPLICATION_CODE_DataCard2_2 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="DESCRIPTION"
+            Default: =ThisItem.DESCRIPTION
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="DESCRIPTION"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@CATEGORIES], DataSourceInfo.MaxLength, "DESCRIPTION")
+            Required: =true
+            Update: =DataCardValue4_2.Text
+            Width: =frmCategory.Width
+            X: =0
+            Y: =0
+            ZIndex: =11
+
+            DataCardKey4_2 As label:
+                AutoHeight: =true
+                Height: =34
+                Size: =18
+                Text: ="Description"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue4_2 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =60
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4_2.Y + DataCardKey4_2.Height + 5
+                ZIndex: =2
+
+            ErrorMessage4_2 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue4_2.Y + DataCardValue4_2.Height
+                ZIndex: =3
+
+            StarVisible4_2 As label:
+                Align: =Align.Center
+                Height: =DataCardKey4_2.Height
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4_2.Y
+                ZIndex: =4
+
+    btnSaveApplication_2 As button:
+        Fill: =RGBA(153, 207, 236, 1)
+        Height: =txtApplicationNameSearch.Height
+        HoverFill: =ColorFade(RGBA(153, 207, 236, 1), -20%)
+        OnSelect: =SubmitForm(frmCategory)
+        Text: =If(frmCategory.Mode = FormMode.Edit, "Edit", "Save")
+        Width: =176
+        X: =656
+        Y: =688
+        ZIndex: =11
+
+    btnBackToListApplication_2 As button:
+        Fill: =RGBA(116, 116, 116, 1)
+        Height: =txtApplicationNameSearch.Height
+        HoverFill: =ColorFade(RGBA(153, 207, 236, 1), -20%)
+        OnSelect: =Navigate(srcCategorySearch, ScreenTransition.Fade)
+        Text: ="Back to List"
+        Width: =176
+        X: =886
+        Y: =688
+        ZIndex: =12
+

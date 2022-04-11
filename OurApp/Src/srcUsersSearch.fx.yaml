@@ -1,0 +1,262 @@
+srcUsersSearch As screen:
+
+    recHeaderPrincipal_2 As rectangle:
+        Fill: =RGBA(153, 207, 236, 1)
+        Width: =1366
+        ZIndex: =1
+
+    lblTitlePrincipal_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =Bold
+        Height: =100
+        Size: =32
+        Text: ="Central Application Management"
+        Width: =740
+        X: =92
+        ZIndex: =2
+
+    lftMenuPrincipal_1 As LeftMenu:
+        Height: =668
+        MenuBgColor: =RGBA(179, 179, 179, 1)
+        MenuColor: =RGBA(255, 255, 255, 1)
+        MenuItems: |-
+            =Table(
+                    {
+                        MenuLabel: "Applications",
+                        MenuIcon: Icon.Controller,
+                        MenuScreenNavigate: srcApplicationSearch,
+                        MenuID: 1
+                    },
+                    {
+                        MenuLabel: "Categorys",
+                        MenuIcon: Icon.Tag,
+                        MenuScreenNavigate: srcCategorySearch,
+                        MenuID: 2
+                    },
+                    {
+                        MenuLabel: "Users",
+                        MenuIcon: Icon.Person,
+                        MenuScreenNavigate: srcUsersSearch,
+                        MenuID: 3
+                    },
+                    {
+                        MenuLabel: "User Privs",
+                        MenuIcon: Icon.Lock,
+                        MenuScreenNavigate: srcCategorySearch,
+                        MenuID: 4
+                    },
+                    {
+                        MenuLabel: "Priv Request",
+                        MenuIcon: Icon.Mail,
+                        MenuScreenNavigate: srcRequestSearch,
+                        MenuID: 5
+                    }
+                )
+        Width: =317
+        Y: =100
+        ZIndex: =3
+
+    icoBackPrincipal_1 As icon.BackArrow:
+        Color: =RGBA(255, 255, 255, 1)
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =13
+        Y: =13
+        ZIndex: =4
+
+    recSeparatorTitlePrincipal_1 As rectangle:
+        Fill: =RGBA(128, 128, 128, 1)
+        Height: =1
+        Width: =1049
+        X: =317
+        Y: =181
+        ZIndex: =5
+
+    lblCatalogTitlePrincipal_1 As label:
+        Align: =Center
+        Color: =RGBA(128, 128, 128, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =81
+        Size: =28
+        Text: ="Users Catalog"
+        Width: =1049
+        X: =317
+        Y: =100
+        ZIndex: =6
+
+    imgUser_2 As image:
+        BorderColor: =RGBA(128, 128, 128, 1)
+        BorderThickness: =1
+        DisabledBorderColor: =RGBA(255, 255, 255, 1)
+        Height: =77
+        Image: ='kisspng-computer-icons-user-profile-info-5acde51ebdcc36.0919547315234429747774'
+        RadiusBottomLeft: =imgUser_2.Height
+        RadiusBottomRight: =imgUser_2.Height
+        RadiusTopLeft: =imgUser_2.Height
+        RadiusTopRight: =imgUser_2.Height
+        Width: =80
+        X: =1246
+        Y: =13
+        ZIndex: =7
+
+    lblUserPrincipal_1 As label:
+        Align: =Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Size: =20
+        Text: |-
+            ="User: Oscar Morales Martinez"
+        Width: =395
+        X: =832
+        Y: =13
+        ZIndex: =8
+
+    lblRolPrincipal_1 As label:
+        Align: =Right
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =36
+        Size: =20
+        Text: |-
+            ="Role: Admin"
+        Width: =395
+        X: =832
+        Y: =54
+        ZIndex: =9
+
+    galUserData As gallery.galleryVertical:
+        BorderColor: =RGBA(56, 96, 178, 1)
+        Height: =425
+        Items: |-
+            =//APPLICATIONS
+            Search(USERS, txtUserSearch.Text, "FULLNAME")
+        Layout: =Layout.Vertical
+        TemplateFill: =If(ThisItem.IsSelected,RGBA(224,224,224,100), RGBA(224,224,224,0))
+        TemplateSize: =70
+        Width: =1049
+        X: =317
+        Y: =342
+        ZIndex: =10
+
+        lblUserNickNameGrid As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.NICKNAME
+            Width: =187
+            X: =2
+            ZIndex: =1
+
+        lblUserFullNameGrid As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.FULLNAME
+            Width: |
+                =272
+            X: =190
+            ZIndex: =2
+
+        btnEdit_1 As button:
+            Fill: =RGBA(153, 207, 236, 1)
+            HoverFill: =ColorFade(RGBA(153, 207, 236, 1), -20%)
+            OnSelect: |-
+                =//Select(Parent)
+                Set(_user, galUserData.Selected);
+                EditForm(frmUser);
+                Navigate(srcUserAddEdit, ScreenTransition.Fade)
+            Text: ="Edit"
+            Width: =110
+            X: =788
+            Y: =12
+            ZIndex: =3
+
+        btnDelete_1 As button:
+            Fill: =RGBA(255, 0, 0, 1)
+            HoverFill: =ColorFade(RGBA(255, 0, 0, 1), -20%)
+            OnSelect: |-
+                =Set(_user, galUserData.Selected);
+                Remove(USERS, _user);
+            Text: ="Delete"
+            Width: =110
+            X: =919
+            Y: =12
+            ZIndex: =4
+
+        lblUserEmailGrid As label:
+            Height: =70
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.EMAIL
+            Width: =300
+            X: =475
+            ZIndex: =5
+
+    recApplicationDataHeader_1 As rectangle:
+        Fill: =RGBA(153, 207, 236, 1)
+        Height: =53
+        Width: =galUserData.Width
+        X: =317
+        Y: =289
+        ZIndex: =11
+
+    lblApplicationNameGridHeader_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =15
+        Text: ="NickName"
+        Width: =lblUserNickNameGrid.Width
+        X: =317
+        Y: =289
+        ZIndex: =12
+
+    lblApplicationCodeGridHeader_1 As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =15
+        Text: ="Full Name"
+        Width: =272
+        X: =504
+        Y: =289
+        ZIndex: =13
+
+    txtUserSearch As text:
+        Default: =""
+        Height: =59
+        Width: =322
+        X: =510
+        Y: =193
+        ZIndex: =14
+
+    lblUserNameSearch As label:
+        Align: =Right
+        Height: =59
+        Size: =15
+        Text: ="Full Name"
+        Width: =187
+        X: =317
+        Y: =193
+        ZIndex: =15
+
+    btnAddUser As button:
+        Fill: =RGBA(153, 207, 236, 1)
+        Height: =txtUserSearch.Height
+        HoverFill: =ColorFade(RGBA(153, 207, 236, 1), -20%)
+        OnSelect: |-
+            =NewForm(frmUser);
+            Navigate(srcUserAddEdit, ScreenTransition.Fade)
+        Text: ="Add User"
+        Width: =176
+        X: =1177
+        Y: =206
+        ZIndex: =17
+
+    lblUserCategoryIDHeader As label:
+        Color: =RGBA(255, 255, 255, 1)
+        FontWeight: =FontWeight.Bold
+        Height: =53
+        Size: =15
+        Text: ="Email"
+        Width: =lblUserNickNameGrid.Width
+        X: =781
+        Y: =289
+        ZIndex: =18
+
