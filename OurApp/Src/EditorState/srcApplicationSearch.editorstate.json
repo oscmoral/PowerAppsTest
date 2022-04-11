@@ -91,7 +91,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "btnAddApplication",
-    "ParentIndex": 12,
+    "ParentIndex": 14,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -875,7 +875,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "galApplicationData",
-    "ParentIndex": 17,
+    "ParentIndex": 19,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1094,7 +1094,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "icoBackPrincipal",
-    "ParentIndex": 3,
+    "ParentIndex": 5,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1320,7 +1320,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "imgUser",
-    "ParentIndex": 5,
+    "ParentIndex": 7,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -1532,7 +1532,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "Label4",
-    "ParentIndex": 1,
+    "ParentIndex": 3,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -2097,7 +2097,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblApplicationCategoryIDHeader",
-    "ParentIndex": 16,
+    "ParentIndex": 18,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -2662,7 +2662,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblApplicationCodeGridHeader",
-    "ParentIndex": 15,
+    "ParentIndex": 17,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -3227,7 +3227,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblApplicationNameGridHeader",
-    "ParentIndex": 14,
+    "ParentIndex": 16,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -3503,7 +3503,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblApplicationNameSearch",
-    "ParentIndex": 10,
+    "ParentIndex": 12,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -3793,7 +3793,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblCatalogTitlePrincipal",
-    "ParentIndex": 8,
+    "ParentIndex": 10,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4076,7 +4076,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblRolPrincipal",
-    "ParentIndex": 6,
+    "ParentIndex": 8,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4359,7 +4359,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblTitlePrincipal",
-    "ParentIndex": 2,
+    "ParentIndex": 4,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4642,7 +4642,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "lblUserPrincipal",
-    "ParentIndex": 4,
+    "ParentIndex": 6,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4900,7 +4900,7 @@
     },
     "MetaDataIDKey": "",
     "Name": "lftMenuPrincipal",
-    "ParentIndex": 7,
+    "ParentIndex": 9,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -4996,7 +4996,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "recApplicationDataHeader",
-    "ParentIndex": 13,
+    "ParentIndex": 15,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5239,7 +5239,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "recSeparatorTitlePrincipal",
-    "ParentIndex": 9,
+    "ParentIndex": 11,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
@@ -5448,7 +5448,7 @@
     "LayoutName": "",
     "MetaDataIDKey": "",
     "Name": "txtApplicationNameSearch",
-    "ParentIndex": 11,
+    "ParentIndex": 13,
     "PersistMetaDataIDKey": false,
     "Properties": [
       {
